@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MINI2</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <script>
+  // Siempre arrancar arriba en el primer load
+  window.addEventListener("load", () => {
+    // si la URL trae #algo, lo limpiamos para que no arranque “en el medio”
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
+  });
+</script>
   </head>
   <body>
     <!--barra-->
@@ -18,7 +28,7 @@
             src="./logos/lol3.jpeg"
             alt="logo"
             class="w-10 h-10 rounded-full object-cover"
-          />
+          /> </a>
         <!--Links-->
         <ul
           class="hidden md:flex items-center gap-10 text-xs tracking-widest opacity-80"
